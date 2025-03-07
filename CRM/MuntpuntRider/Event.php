@@ -10,7 +10,7 @@ class CRM_MuntpuntRider_Event {
 
   private function getEvent($eventId) {
     return \Civi\Api4\Event::get(FALSE)
-      ->addSelect('title', 'custom.*')
+      ->addSelect('title', 'start_date', 'end_date', 'extra_evenement_info.muntpunt_zalen:label', 'evenement_planning_memo_overleg_en_statistiek.aanpreekpersoon.display_name', 'custom.*')
       ->addWhere('id', '=', $eventId)
       ->execute()
       ->first();
@@ -23,6 +23,10 @@ class CRM_MuntpuntRider_Event {
 
     $this->fields['id'] = $event['id'];
     $this->fields['title'] = $event['title'];
+    $this->fields['start_date'] = $event['start_date'];
+    $this->fields['end_date'] = $event['end_date'];
+    $this->fields['zalen'] = $event['extra_evenement_info.muntpunt_zalen:label'];
+    $this->fields['aanpreekpersoon'] = $event['evenement_planning_memo_overleg_en_statistiek.aanpreekpersoon.display_name'];
     $this->fields['meubilair'] = $this->convertfieldsMeubilair($event);
     $this->fields['catering'] = $this->convertfieldsCatering($event);
     $this->fields['technisch_materiaal'] = $this->convertfieldsTechnischMateriaal($event);
