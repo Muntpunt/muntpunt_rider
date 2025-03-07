@@ -65,7 +65,10 @@ class CRM_MuntpuntRider_Page_View extends CRM_Core_Page {
   }
 
   private function processQueryParamEvent(): void {
-    $this->riderEventId = CRM_Utils_Request::retrieve('event_id', 'Integer', $this, FALSE, 0);
+    $id = CRM_Utils_Request::retrieve('event_id', 'Positive');
+    if ($id) {
+      $this->riderEventId = $id;
+    }
   }
 
 }
