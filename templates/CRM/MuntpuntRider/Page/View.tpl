@@ -1,46 +1,40 @@
 {foreach from=$events item=event}
   <h2>{$event.title}</h2>
-
+  <p>Van {$event.start_date} tot {$event.end_date}</p>
   <h3>Meubilair</h3>
-  {foreach from=$event.meubilair item=subsection}
-    <table class="form-layout-compressed">
-      <tbody>
-      {foreach from=$subsection item=value key=label}
-        <tr class="{cycle values="odd-row,even-row"}">
-            <td>{$label}</td>
-            <td>{$value}</td>
-        </tr>
-      {/foreach}
-      </tbody>
-    </table>
-  {/foreach}
+  <table class="form-layout-compressed">
+    <tbody>
+    {foreach from=$event.meubilair key=label item=value}
+      <tr class="{cycle values="odd-row,even-row"}">
+          <td>{$label}</td>
+          <td>{$value}</td>
+      </tr>
+    {/foreach}
+    </tbody>
+  </table>
 
   <h3>Catering</h3>
-  {foreach from=$event.catering item=subsection}
-    <table class="form-layout-compressed">
-      <tbody>
-      {foreach from=$subsection item=value key=label}
-        <tr class="{cycle values="odd-row,even-row"}">
-          <td>{$label}</td>
-          <td>{$value}</td>
-        </tr>
-      {/foreach}
-      </tbody>
-    </table>
-  {/foreach}
+  <table class="form-layout-compressed">
+    <tbody>
+    {foreach from=$event.catering key=label item=value}
+      <tr class="{cycle values="odd-row,even-row"}">
+        <td>{$label}</td>
+        <td>{$value}</td>
+      </tr>
+    {/foreach}
+    </tbody>
+  </table>
 
   <h3>Technisch materiaal</h3>
-  {foreach from=$event.technisch_materiaal item=subsection}
-    <table class="form-layout-compressed">
-      <tbody>
-      {foreach from=$subsection item=value key=label}
-        <tr class="{cycle values="odd-row,even-row"}">
-          <td>{$label}</td>
-          <td>{$value}</td>
-        </tr>
-      {/foreach}
-      </tbody>
-    </table>
-  {/foreach}
+  <table class="form-layout-compressed">
+    <tbody>
+    {foreach from=$event.technisch_materiaal key=label item=value}
+      <tr class="{cycle values="odd-row,even-row"}">
+        <td>{$label}</td>
+        <td>{$value}</td>
+      </tr>
+    {/foreach}
+    </tbody>
+  </table>
 
 {/foreach}
