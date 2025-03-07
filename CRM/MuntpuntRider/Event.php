@@ -30,16 +30,16 @@ class CRM_MuntpuntRider_Event {
 
   private function convertfieldsMeubilair($event) {
     $fieldNameAndTitle = [
-      "RondeTafels" => "Rider_Meubilair_Technisch_materiaal.Ronde_Tafels",
-      "RechthoekigetafelsPVC" => "Rider_Meubilair_Technisch_materiaal.Rechthoekige_tafels_PVC",
-      "Rechthoekigetafelshout" => "Rider_Meubilair_Technisch_materiaal.Rechthoekige_tafels_hout",
+      "Ronde tafels" => "Rider_Meubilair_Technisch_materiaal.Ronde_Tafels",
+      "Rechthoekige tafels PVC" => "Rider_Meubilair_Technisch_materiaal.Rechthoekige_tafels_PVC",
+      "Rechthoekige tafels hout" => "Rider_Meubilair_Technisch_materiaal.Rechthoekige_tafels_hout",
       "Cocktailtafels" => "Rider_Meubilair_Technisch_materiaal.Cocktailtafels",
       "Conferentiestoelen" => "Rider_Meubilair_Technisch_materiaal.Conferentiestoelen",
       "Clubzetels" => "Rider_Meubilair_Technisch_materiaal.Clubzetels",
       "Klapstoelen" => "Rider_Meubilair_Technisch_materiaal.Klapstoelen",
       "Kartonnenkrukjes" => "Rider_Meubilair_Technisch_materiaal.Kartonnen_krukjes",
       "Kussens" => "Rider_Meubilair_Technisch_materiaal.Kussens",
-      "Ontvangstbaliezonderfrigo" => "Rider_Meubilair_Technisch_materiaal.Ontvangstbalie_zonder_frigo_",
+      "Ontvangstbalie zonder frigo" => "Rider_Meubilair_Technisch_materiaal.Ontvangstbalie_zonder_frigo_",
       "Vestiairerek" => "Rider_Meubilair_Technisch_materiaal.vestiairerek",
       "Flipchart" => "Rider_Meubilair_Technisch_materiaal.Flipchart",
       "Spreekgestoelte" => "Rider_Meubilair_Technisch_materiaal.Spreekgestoelte",
@@ -49,8 +49,8 @@ class CRM_MuntpuntRider_Event {
       "Podium" => "Rider_Meubilair_Technisch_materiaal.Podium",
       "Wittebankjes" => "Rider_Meubilair_Technisch_materiaal.Witte_bankjes",
       "Opstellingzaal" => "Rider_Meubilair_Technisch_materiaal.Opstelling_zaal",
-      "Ontvangstbaliemetfrigo" => "Rider_Meubilair_Technisch_materiaal.Ontvangstbalie_met_frigo",
-      "RidersEnkelindienmeerderezalentegelijk" => "Rider_Meubilair_Technisch_materiaal.Riders_Enkel_indien_meerdere_zalen_te_gelijk",
+      "Ontvangst baliemet frigo" => "Rider_Meubilair_Technisch_materiaal.Ontvangstbalie_met_frigo",
+      "Rider" => "Rider_Meubilair_Technisch_materiaal.Riders_Enkel_indien_meerdere_zalen_te_gelijk",
       "Opstellingtekening" => "Rider_Meubilair_Technisch_materiaal.Opstelling_tekening",
     ];
 
@@ -87,7 +87,7 @@ class CRM_MuntpuntRider_Event {
 
   private function extractNonEmptyfields($event, $fieldNameAndTitle) {
     $arr = [];
-    foreach ($fieldNameAndTitle as $fieldName => $title) {
+    foreach ($fieldNameAndTitle as $title => $fieldName) {
       if (!empty($event[$fieldName])) {
         $arr[$title] = $event[$fieldName];
       }
