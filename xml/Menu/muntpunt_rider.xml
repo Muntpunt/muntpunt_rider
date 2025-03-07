@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<menu>
+  <item>
+    <path>civicrm/muntpunt-rider-view</path>
+    <page_callback>CRM_MuntpuntRider_Page_View</page_callback>
+    <title>View</title>
+    <access_arguments>access CiviCRM</access_arguments>
+  </item>
+</menu>
