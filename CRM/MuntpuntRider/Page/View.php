@@ -6,10 +6,9 @@ class CRM_MuntpuntRider_Page_View extends CRM_Core_Page {
   private int $riderEventId = 0;
 
   public function run() {
-    CRM_Utils_System::setTitle('Muntpunt');
-
     try {
       $this->processQueryParams();
+      $this->setPageTitle();
 
       $eventFetcher = new CRM_MuntpuntRider_EventFetcher();
 
@@ -69,6 +68,39 @@ class CRM_MuntpuntRider_Page_View extends CRM_Core_Page {
     if ($id) {
       $this->riderEventId = $id;
     }
+  }
+
+  private function setPageTitle(): void {
+    $daysOfTheWeek = [
+      1 => 'Maandag',
+      2 => 'Dindag',
+      3 => 'Woensdag',
+      4 => 'Donderdag',
+      5 => 'Vrijdag',
+      6 => 'Zaterdag',
+      7 => 'Zondag',
+    ];
+    $monthsOfTheYear = [
+      1 => 'januari',
+      2 => 'februari',
+      3 => 'maart',
+      4 => 'april',
+      5 => 'Mei',
+      6 => 'juni',
+      7 => 'juli',
+      8 => 'augustus',
+      9 => 'september',
+      10 => 'oktober',
+      11 => 'november',
+      12 => 'december',
+    ];
+    $numericDate = strtotime($this->riderEventDate);
+    $w = date('N', $numericDate);
+    $d = date('j', $numericDate);
+    $m = date('d', $numericDate);
+    $y = date('Y', $numericDate);
+
+    CRM_Utils_System::setTitle($daysOfTheWeek[$w] . " $d " . $monthsOfTheYear[$m] . " $y");
   }
 
 }
