@@ -10,7 +10,10 @@ class CRM_MuntpuntRider_Event {
 
   private function getEvent($eventId) {
     $event = \Civi\Api4\Event::get(FALSE)
-      ->addSelect('title', 'start_date', 'end_date', 'extra_evenement_info.muntpunt_zalen:label', 'evenement_planning_memo_overleg_en_statistiek.aanpreekpersoon.display_name', 'custom.*')
+      ->addSelect('title', 'start_date', 'end_date', 'custom.*',
+        'extra_evenement_info.muntpunt_zalen:label', 'evenement_planning_memo_overleg_en_statistiek.aanpreekpersoon.display_name',
+        'Rider_Meubilair_Technisch_materiaal.Opstelling_zaal:label'
+      )
       ->addWhere('id', '=', $eventId)
       ->execute()
       ->first();
@@ -59,7 +62,7 @@ class CRM_MuntpuntRider_Event {
       "Bijzettafel" => "Rider_Meubilair_Technisch_materiaal.Bijzettafel",
       "Podium" => "Rider_Meubilair_Technisch_materiaal.Podium",
       "Witte bankjes" => "Rider_Meubilair_Technisch_materiaal.Witte_bankjes",
-      "Opstelling zaal" => "Rider_Meubilair_Technisch_materiaal.Opstelling_zaal",
+      "Opstelling zaal" => "Rider_Meubilair_Technisch_materiaal.Opstelling_zaal:label",
       "Ontvangst balie met frigo" => "Rider_Meubilair_Technisch_materiaal.Ontvangstbalie_met_frigo",
       "Rider" => "Rider_Meubilair_Technisch_materiaal.Riders_Enkel_indien_meerdere_zalen_te_gelijk",
       "Opstelling" => "Rider_Meubilair_Technisch_materiaal.Opstelling_tekening",
