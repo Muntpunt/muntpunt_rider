@@ -1,7 +1,7 @@
 <a href="/civicrm/muntpunt-rider-view?datum={$previousDay}">&lt; Vorige dag</a> | <a href="/civicrm/muntpunt-rider-view?datum={$nextDay}">Volgende dag &gt;</a>
 {foreach from=$events item=event}
   <h2>{$event.title}</h2>
-  <p>Van {$event.start_hour} tot {$event.end_hour}, Zalen: {$event.zalen}</p>
+  <p>Zaal: {$event.zalen}<br>Van {$event.start_hour} tot {$event.end_hour}</p>
   <p>Aanspreekpersoon: {$event.aanspreekpersoon}</p>
 
   {if count($event.meubilair) > 0}

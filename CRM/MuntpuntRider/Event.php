@@ -9,11 +9,18 @@ class CRM_MuntpuntRider_Event {
   }
 
   private function getEvent($eventId) {
-    return \Civi\Api4\Event::get(FALSE)
+    $event = \Civi\Api4\Event::get(FALSE)
       ->addSelect('title', 'start_date', 'end_date', 'extra_evenement_info.muntpunt_zalen:label', 'evenement_planning_memo_overleg_en_statistiek.aanpreekpersoon.display_name', 'custom.*')
       ->addWhere('id', '=', $eventId)
       ->execute()
       ->first();
+
+    if ($event && $this->isInRoomOfInterest($event)) {
+      return $event;
+    }
+    else {
+      return null;
+    }
   }
 
   private function convertApiResultToFieldsArray($event) {
@@ -100,4 +107,26 @@ class CRM_MuntpuntRider_Event {
     return $arr;
   }
 
+  private function isInRoomOfInterest($event): bool {
+    $validRooms = [
+      'De wolken',
+      'Agora 0',
+      'Literair Salon',
+      'Mallemunt',
+      'Muntpunt Café',
+      'De Grid',
+      'Peristilium',
+      'Zinneke',
+      'Ketje'
+    ];
+
+    $roomsAsString = implode(', ', $event['extra_evenement_info.muntpunt_zalen:label']);
+    foreach ($validRooms as $room) {
+      if (str_contains($roomsAsString, $room)) {
+        return TRUE;
+      }
+    }
+
+    return FALSE;
+  }
 }
