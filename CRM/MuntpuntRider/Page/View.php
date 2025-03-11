@@ -20,6 +20,8 @@ class CRM_MuntpuntRider_Page_View extends CRM_Core_Page {
       }
 
       $this->assign('events', $events);
+      $this->assign('nextDay', $this->getNextDay());
+      $this->assign('previousDay', $this->getPreviousDay());
     }
     catch (Exception $e) {
       $this->assign('errorMessage', $e->getMessage());
@@ -102,5 +104,18 @@ class CRM_MuntpuntRider_Page_View extends CRM_Core_Page {
 
     CRM_Utils_System::setTitle($daysOfTheWeek[$w] . " $d " . $monthsOfTheYear[$m] . " $y");
   }
+
+  private function getPreviousDay(): string {
+    $numericDate = strtotime($this->riderEventDate . ' 12:00:00') - 86400;
+    return date('Y-m-d', $numericDate);
+  }
+
+  private function getNextDay(): string {
+    $numericDate = strtotime($this->riderEventDate . ' 12:00:00') + 86400;
+    return date('Y-m-d', $numericDate);
+
+  }
+
+
 
 }
