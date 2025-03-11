@@ -105,7 +105,12 @@ class CRM_MuntpuntRider_Event {
     $arr = [];
     foreach ($fieldNameAndTitle as $title => $fieldName) {
       if (!empty($event[$fieldName])) {
-        $arr[$title] = $event[$fieldName];
+        if ($fieldName == 'Rider_Meubilair_Technisch_materiaal.Opstelling_tekening') {
+          $arr[$title] = $this->getImageUrl($event[$fieldName]);
+        }
+        else {
+          $arr[$title] = $event[$fieldName];
+        }
       }
     }
 
@@ -133,5 +138,18 @@ class CRM_MuntpuntRider_Event {
     }
 
     return FALSE;
+  }
+
+  private function getImageUrl($fileId) {
+    $entityId = CRM_Core_DAO::getFieldValue('CRM_Core_DAO_EntityFile', $fileId, 'entity_id', 'file_id');
+    [$path] = CRM_Core_BAO_File::path($fileId, $entityId);
+    $fileHash = CRM_Core_BAO_File::generateFileHash($entityId, $fileId);
+    $url = CRM_Utils_System::url('civicrm/file',
+      "reset=1&id=$fileId&eid=$entityId&fcs=$fileHash",
+      FALSE, NULL, TRUE, TRUE
+    );
+
+    $fileType = CRM_Core_DAO::getFieldValue('CRM_Core_DAO_File', $fileId, 'file_type', 'id');
+    return CRM_Utils_File::getFileURL($path, $fileType, $url);
   }
 }
