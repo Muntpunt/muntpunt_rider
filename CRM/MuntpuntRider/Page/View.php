@@ -97,7 +97,7 @@ class CRM_MuntpuntRider_Page_View extends CRM_Core_Page {
     $numericDate = strtotime($this->riderEventDate . ' 12:00:00');
     $w = date('N', $numericDate);
     $d = date('j', $numericDate);
-    $m = date('d', $numericDate);
+    $m = date('n', $numericDate);
     $y = date('Y', $numericDate);
 
     CRM_Utils_System::setTitle($daysOfTheWeek[$w] . " $d " . $monthsOfTheYear[$m] . " $y");
