@@ -4,7 +4,12 @@ class CRM_MuntpuntRider_EventFetcher {
   public function fetchEventsById(int $eventId) {
     $event = new CRM_MuntpuntRider_Event($eventId);
 
-    return [$event->fields];
+    if (!empty($event->fields)) {
+      return [$event->fields];
+    }
+    else {
+      return [];
+    }
   }
 
   public function fetchEventsByDate(string $eventDate) {
