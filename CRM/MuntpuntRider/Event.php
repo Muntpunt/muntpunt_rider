@@ -12,7 +12,8 @@ class CRM_MuntpuntRider_Event {
     $event = \Civi\Api4\Event::get(FALSE)
       ->addSelect('title', 'start_date', 'end_date', 'custom.*',
         'extra_evenement_info.muntpunt_zalen:label', 'evenement_planning_memo_overleg_en_statistiek.aanpreekpersoon.display_name',
-        'Rider_Meubilair_Technisch_materiaal.Opstelling_zaal:label'
+        'Rider_Meubilair_Technisch_materiaal.Opstelling_zaal:label',
+        'Rider_Technisch_materiaal.Aansluiting_laptop:label'
       )
       ->addWhere('id', '=', $eventId)
       ->execute()
@@ -86,7 +87,7 @@ class CRM_MuntpuntRider_Event {
   private function convertfieldsTechnischMateriaal($event) {
     $fieldNameAndTitle = [
       "Microfoon" => "Rider_Technisch_materiaal.Microfoon",
-      "Aansluiting laptop" => "Rider_Technisch_materiaal.Aansluiting_laptop",
+      "Aansluiting laptop" => "Rider_Technisch_materiaal.Aansluiting_laptop:label",
       "Microfoon headset" => "Rider_Technisch_materiaal.Microfoon_Headset",
       "Microfoonstatief" => "Rider_Technisch_materiaal.Microfoonstatief",
       "Stekkerdozen" => "Rider_Technisch_materiaal.Stekkerdozen",
