@@ -105,8 +105,8 @@ class CRM_MuntpuntRider_Event {
     $arr = [];
     foreach ($fieldNameAndTitle as $title => $fieldName) {
       if (!empty($event[$fieldName])) {
-        if ($fieldName == 'Rider_Meubilair_Technisch_materiaal.Opstelling_tekening') {
-          $arr[$title] = $this->getImageUrl($event[$fieldName]);
+        if ($fieldName == 'Rider_Meubilair_Technisch_materiaal.Opstelling_tekening'  || $fieldName == 'Rider_Meubilair_Technisch_materiaal.Riders_Enkel_indien_meerdere_zalen_te_gelijk') {
+          $arr[$title] = $this->getFileUrl($event[$fieldName]);
         }
         else {
           $arr[$title] = $event[$fieldName];
@@ -140,7 +140,7 @@ class CRM_MuntpuntRider_Event {
     return FALSE;
   }
 
-  private function getImageUrl($fileId) {
+  private function getFileUrl($fileId) {
     $entityId = CRM_Core_DAO::getFieldValue('CRM_Core_DAO_EntityFile', $fileId, 'entity_id', 'file_id');
     [$path] = CRM_Core_BAO_File::path($fileId, $entityId);
 
