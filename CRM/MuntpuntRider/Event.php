@@ -23,8 +23,8 @@ class CRM_MuntpuntRider_Event {
 
     $this->fields['id'] = $event['id'];
     $this->fields['title'] = $event['title'];
-    $this->fields['start_date'] = $event['start_date'];
-    $this->fields['end_date'] = $event['end_date'];
+    $this->fields['start_hour'] = substr($event['start_date'], 11, 5);
+    $this->fields['end_hour'] = substr($event['end_date'], 11, 5);
     $this->fields['zalen'] = implode(', ', $event['extra_evenement_info.muntpunt_zalen:label']);
     $this->fields['aanspreekpersoon'] = $event['evenement_planning_memo_overleg_en_statistiek.aanpreekpersoon.display_name'];
     $this->fields['meubilair'] = $this->convertfieldsMeubilair($event);
