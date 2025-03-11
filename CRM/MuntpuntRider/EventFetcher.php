@@ -32,6 +32,8 @@ class CRM_MuntpuntRider_EventFetcher {
       or
         (e.start_date < '$startOfTheDay' and e.end_date >= '$startOfTheDay')
       )
+      order by
+        e.start_date
     ";
 
     $dao = CRM_Core_DAO::executeQuery($sql);
