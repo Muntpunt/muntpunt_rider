@@ -1,3 +1,4 @@
+<a href="#">&lt; Vorige</a> | <a href="#">Volgende &gt;</a>
 {foreach from=$events item=event}
   <h2>{$event.title}</h2>
   <p>Van {$event.start_date} tot {$event.end_date}</p>
