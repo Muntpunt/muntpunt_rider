@@ -143,7 +143,13 @@ class CRM_MuntpuntRider_Event {
   private function getImageUrl($fileId) {
     $entityId = CRM_Core_DAO::getFieldValue('CRM_Core_DAO_EntityFile', $fileId, 'entity_id', 'file_id');
     [$path] = CRM_Core_BAO_File::path($fileId, $entityId);
-    $fileType = CRM_Core_DAO::getFieldValue('CRM_Core_DAO_File', $fileId, 'file_type', 'id');
-    return CRM_Utils_File::getFileURL($path, $fileType);
+
+    $fileDetails = \Civi\Api4\File::get(FALSE)
+      ->addSelect('mime_type')
+      ->addWhere('id', '=', $fileId)
+      ->execute()
+      ->first();
+
+    return CRM_Utils_File::getFileURL($path, $fileDetails['mime_type']);
   }
 }
