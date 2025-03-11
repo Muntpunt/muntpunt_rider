@@ -38,7 +38,10 @@ class CRM_MuntpuntRider_EventFetcher {
     $events = [];
     while ($dao->fetch()) {
       $event = new CRM_MuntpuntRider_Event($dao->id);
-      $events[] = $event->fields;
+
+      if (!empty($event->fields)) {
+        $events[] = $event->fields;
+      }
     }
 
     return $events;
