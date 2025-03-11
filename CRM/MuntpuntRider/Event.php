@@ -13,7 +13,8 @@ class CRM_MuntpuntRider_Event {
       ->addSelect('title', 'start_date', 'end_date', 'custom.*',
         'extra_evenement_info.muntpunt_zalen:label', 'evenement_planning_memo_overleg_en_statistiek.aanpreekpersoon.display_name',
         'Rider_Meubilair_Technisch_materiaal.Opstelling_zaal:label',
-        'Rider_Technisch_materiaal.Aansluiting_laptop:label'
+        'Rider_Technisch_materiaal.Aansluiting_laptop:label',
+        'Rider_Catering.Koffiecorner_bij_vergaderzalen:label'
       )
       ->addWhere('id', '=', $eventId)
       ->execute()
@@ -78,7 +79,7 @@ class CRM_MuntpuntRider_Event {
       "Koffie water en thee fruitsap" => "Rider_Catering.Koffie_water_en_thee_fruitsap",
       "Water fruitsap bier wijn en cava" => "Rider_Catering.Water_fruitsap_bier_wijn_en_cava",
       "Water" => "Rider_Catering.Water",
-      "Koffiecorner bij vergaderzalen" => "Rider_Catering.Koffiecorner_bij_vergaderzalen",
+      "Koffiecorner bij vergaderzalen" => "Rider_Catering.Koffiecorner_bij_vergaderzalen:label",
     ];
 
     return $this->extractNonEmptyfields($event, $fieldNameAndTitle);
