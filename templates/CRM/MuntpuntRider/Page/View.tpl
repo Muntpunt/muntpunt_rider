@@ -10,7 +10,7 @@
       <tbody>
       {foreach from=$event.meubilair key=label item=value}
         <tr class="{cycle values="odd-row,even-row"}">
-            <td>{$label}</td>
+            <td>{$label}:</td>
             <td>{$value}</td>
         </tr>
       {/foreach}
@@ -24,7 +24,7 @@
       <tbody>
       {foreach from=$event.catering key=label item=value}
         <tr class="{cycle values="odd-row,even-row"}">
-          <td>{$label}</td>
+          <td>{$label}:</td>
           <td>{$value}</td>
         </tr>
       {/foreach}
@@ -38,7 +38,7 @@
       <tbody>
       {foreach from=$event.technisch_materiaal key=label item=value}
         <tr class="{cycle values="odd-row,even-row"}">
-          <td>{$label}</td>
+          <td>{$label}:</td>
           <td>{$value}</td>
         </tr>
       {/foreach}
