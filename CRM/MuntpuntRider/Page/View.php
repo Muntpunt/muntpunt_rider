@@ -94,7 +94,7 @@ class CRM_MuntpuntRider_Page_View extends CRM_Core_Page {
       11 => 'november',
       12 => 'december',
     ];
-    $numericDate = strtotime($this->riderEventDate);
+    $numericDate = strtotime($this->riderEventDate . ' 12:00:00');
     $w = date('N', $numericDate);
     $d = date('j', $numericDate);
     $m = date('d', $numericDate);
