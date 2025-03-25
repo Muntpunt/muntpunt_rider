@@ -96,10 +96,10 @@ class CRM_MuntpuntRider_Event {
       "Microfoon headset" => "Rider_Technisch_materiaal.Microfoon_Headset",
       "Microfoonstatief" => "Rider_Technisch_materiaal.Microfoonstatief",
       "Stekkerdozen" => "Rider_Technisch_materiaal.Stekkerdozen",
-      "Mobiele TV" => "Rider_Technisch_materiaal.Mobiele_TV",
-      "Mobiele TV Hybride vergadering" => "Rider_Technisch_materiaal.Mobiele_TV_Hybride_vergadering",
-      "Mobiele speakers" => "Rider_Technisch_materiaal.Mobiele_speakers",
       "Theaterspot" => "Rider_Technisch_materiaal.Theaterspot",
+      "Mobiele TV" => "Rider_Technisch_materiaal.Mobiele_TV",
+      "Mobiele TV - Hybride vergadering" => "Rider_Technisch_materiaal.Mobiele_TV_Hybride_vergadering",
+      "Mobiele speakers" => "Rider_Technisch_materiaal.Mobiele_speakers",
     ];
 
     return $this->extractNonEmptyfields($event, $fieldNameAndTitle);
