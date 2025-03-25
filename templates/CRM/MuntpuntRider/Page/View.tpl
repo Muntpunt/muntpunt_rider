@@ -5,7 +5,7 @@
 {/if}
 
 {foreach from=$events item=event}
-  <h2><a href="/civicrm/muntpunt-rider-view?event_id={$event.id}">{$event.title}</a></h2>
+  <h2><a href="/civicrm/muntpunt-rider-view?event_id={$event.id}&datum={$eventDate}">{$event.title}</a></h2>
   <p>Zaal: {$event.zalen}<br>Van {$event.start_hour} tot {$event.end_hour}</p>
   <p>Aanspreekpersoon: {$event.aanspreekpersoon}</p>
 
