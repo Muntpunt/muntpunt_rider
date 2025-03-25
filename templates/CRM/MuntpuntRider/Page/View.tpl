@@ -1,6 +1,11 @@
-<a href="/civicrm/muntpunt-rider-view?datum={$previousDay}">&lt; Vorige dag</a> | <a href="/civicrm/muntpunt-rider-view?datum={$nextDay}">Volgende dag &gt;</a>
+{if $backToOverview}
+  <a href="/civicrm/muntpunt-rider-view?datum={$eventDate}">&lt; Terug naar overzicht</a>
+{else}
+  <a href="/civicrm/muntpunt-rider-view?datum={$previousDay}">&lt; Vorige dag</a> | <a href="/civicrm/muntpunt-rider-view?datum={$nextDay}">Volgende dag &gt;</a>
+{/if}
+
 {foreach from=$events item=event}
-  <h2>{$event.title}</h2>
+  <h2><a href="/civicrm/muntpunt-rider-view?event_id={$event.id}">{$event.title}</a></h2>
   <p>Zaal: {$event.zalen}<br>Van {$event.start_hour} tot {$event.end_hour}</p>
   <p>Aanspreekpersoon: {$event.aanspreekpersoon}</p>
 

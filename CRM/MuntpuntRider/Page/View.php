@@ -14,12 +14,15 @@ class CRM_MuntpuntRider_Page_View extends CRM_Core_Page {
 
       if ($this->riderEventId) {
         $events = $eventFetcher->fetchEventsById($this->riderEventId);
+        $this->assign('backToOverview', TRUE);
       }
       else {
         $events = $eventFetcher->fetchEventsByDate($this->riderEventDate);
+        $this->assign('backToOverview', FALSE);
       }
 
       $this->assign('events', $events);
+      $this->assign('eventDate', $this->riderEventDate);
       $this->assign('nextDay', $this->getNextDay());
       $this->assign('previousDay', $this->getPreviousDay());
     }
