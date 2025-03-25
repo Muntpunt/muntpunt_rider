@@ -64,10 +64,12 @@ class CRM_MuntpuntRider_Event {
       "Bijzettafel" => "Rider_Meubilair_Technisch_materiaal.Bijzettafel",
       "Podium" => "Rider_Meubilair_Technisch_materiaal.Podium",
       "Witte bankjes" => "Rider_Meubilair_Technisch_materiaal.Witte_bankjes",
+      "Hoge stoelen" => "Rider_Meubilair_Technisch_materiaal.Hoge_stoelen",
       "Opstelling zaal" => "Rider_Meubilair_Technisch_materiaal.Opstelling_zaal:label",
       "Ontvangst balie met frigo" => "Rider_Meubilair_Technisch_materiaal.Ontvangstbalie_met_frigo",
       "Rider" => "Rider_Meubilair_Technisch_materiaal.Riders_Enkel_indien_meerdere_zalen_te_gelijk",
       "Opstelling" => "Rider_Meubilair_Technisch_materiaal.Opstelling_tekening",
+      "Opmerking" => "Rider_Meubilair_Technisch_materiaal.Opmerkingen",
     ];
 
     return $this->extractNonEmptyfields($event, $fieldNameAndTitle);
@@ -75,11 +77,13 @@ class CRM_MuntpuntRider_Event {
 
   private function convertfieldsCatering($event) {
     $fieldNameAndTitle = [
-      "Koffie water en thee" => "Rider_Catering.Koffie_water_en_thee",
-      "Koffie water en thee fruitsap" => "Rider_Catering.Koffie_water_en_thee_fruitsap",
-      "Water fruitsap bier wijn en cava" => "Rider_Catering.Water_fruitsap_bier_wijn_en_cava",
+      "Koffie en thee" => "Rider_Catering.Koffie_water_en_thee",
       "Water" => "Rider_Catering.Water",
-      "Koffiecorner bij vergaderzalen" => "Rider_Catering.Koffiecorner_bij_vergaderzalen:label",
+      "Fruitsap" => "Rider_Catering.Koffie_water_en_thee_fruitsap",
+      "Frisdrank" => "Rider_Catering.Frisdrank",
+      "Alcoholisch en non-alcoholische alternatieven" => "Rider_Catering.Water_fruitsap_bier_wijn_en_cava",
+      "Enkel non-alcoholische dranken" => "Rider_Catering.Enkel_non_alcoholische_dranken",
+      "Koffiefrequentie" => "Rider_Catering.Koffiecorner_bij_vergaderzalen:label",
     ];
 
     return $this->extractNonEmptyfields($event, $fieldNameAndTitle);
@@ -119,11 +123,12 @@ class CRM_MuntpuntRider_Event {
 
   private function isInRoomOfInterest($event): bool {
     $validRooms = [
-      'De wolken',
+      'De Wolken',
       'Agora 0',
       'Literair Salon',
       'Mallemunt',
       'Muntpunt Café',
+      'De Spot',
       'De Grid',
       'Peristilium',
       'Zinneke',

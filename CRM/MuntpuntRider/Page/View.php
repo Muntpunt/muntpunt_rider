@@ -75,7 +75,7 @@ class CRM_MuntpuntRider_Page_View extends CRM_Core_Page {
   private function setPageTitle(): void {
     $daysOfTheWeek = [
       1 => 'Maandag',
-      2 => 'Dindag',
+      2 => 'Dinsdag',
       3 => 'Woensdag',
       4 => 'Donderdag',
       5 => 'Vrijdag',
