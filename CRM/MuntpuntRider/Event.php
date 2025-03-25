@@ -46,6 +46,9 @@ class CRM_MuntpuntRider_Event {
 
   private function convertfieldsMeubilair($event) {
     $fieldNameAndTitle = [
+      "Rider" => "Rider_Meubilair_Technisch_materiaal.Riders_Enkel_indien_meerdere_zalen_te_gelijk",
+      "Opstelling" => "Rider_Meubilair_Technisch_materiaal.Opstelling_tekening",
+      "Opstelling zaal" => "Rider_Meubilair_Technisch_materiaal.Opstelling_zaal:label",
       "Ronde tafels" => "Rider_Meubilair_Technisch_materiaal.Ronde_Tafels",
       "Rechthoekige tafels PVC" => "Rider_Meubilair_Technisch_materiaal.Rechthoekige_tafels_PVC",
       "Rechthoekige tafels hout" => "Rider_Meubilair_Technisch_materiaal.Rechthoekige_tafels_hout",
@@ -66,9 +69,6 @@ class CRM_MuntpuntRider_Event {
       "Tapijt (klein)" => "Rider_Meubilair_Technisch_materiaal.Tapijt_klein_",
       "Bijzettafel" => "Rider_Meubilair_Technisch_materiaal.Bijzettafel",
       "Podium" => "Rider_Meubilair_Technisch_materiaal.Podium",
-      "Rider" => "Rider_Meubilair_Technisch_materiaal.Riders_Enkel_indien_meerdere_zalen_te_gelijk",
-      "Opstelling" => "Rider_Meubilair_Technisch_materiaal.Opstelling_tekening",
-      "Opstelling zaal" => "Rider_Meubilair_Technisch_materiaal.Opstelling_zaal:label",
       "Opmerking" => "Rider_Meubilair_Technisch_materiaal.Opmerkingen",
     ];
 
