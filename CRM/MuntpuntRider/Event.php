@@ -132,7 +132,8 @@ class CRM_MuntpuntRider_Event {
       'De Grid',
       'Peristilium',
       'Zinneke',
-      'Ketje'
+      'Ketje',
+      'Leeslamp'
     ];
 
     $roomsAsString = implode(', ', $event['extra_evenement_info.muntpunt_zalen:label']);
