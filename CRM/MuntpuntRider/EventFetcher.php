@@ -27,6 +27,8 @@ class CRM_MuntpuntRider_EventFetcher {
         e.is_active = 1
       and
         ei.muntpunt_zalen is not null
+      and 
+        ei.activiteit_status in (2,5)
       and (
         (e.start_date >= '$startOfTheDay' and e.start_date <= '$endOfTheDay')
       or
