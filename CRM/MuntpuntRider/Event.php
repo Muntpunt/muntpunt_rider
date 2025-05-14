@@ -133,7 +133,8 @@ class CRM_MuntpuntRider_Event {
       'Peristilium',
       'Zinneke',
       'Ketje',
-      'Leeslamp'
+      'Leeslamp',
+      'Agora Tribune'
     ];
 
     $roomsAsString = implode(', ', $event['extra_evenement_info.muntpunt_zalen:label']);
