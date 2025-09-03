@@ -135,7 +135,8 @@ class CRM_MuntpuntRider_Event {
       'Ketje',
       'Leeslamp',
       'Agora Tribune',
-      'Op tafel / À table / Under the table'
+      'Op tafel / À table / Under the table',
+      'Agora Infohoek'
     ];
 
     $roomsAsString = implode(', ', $event['extra_evenement_info.muntpunt_zalen:label']);
