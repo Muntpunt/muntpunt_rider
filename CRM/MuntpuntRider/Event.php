@@ -84,6 +84,7 @@ class CRM_MuntpuntRider_Event {
       "Alcoholisch en non-alcoholische alternatieven" => "Rider_Catering.Water_fruitsap_bier_wijn_en_cava",
       "Enkel non-alcoholische dranken" => "Rider_Catering.Enkel_non_alcoholische_dranken",
       "Koffiefrequentie" => "Rider_Catering.Koffiecorner_bij_vergaderzalen:label",
+      "Opmerking" => "Rider_Catering.Opmerkingen",
     ];
 
     return $this->extractNonEmptyfields($event, $fieldNameAndTitle);
@@ -100,6 +101,7 @@ class CRM_MuntpuntRider_Event {
       "Mobiele TV" => "Rider_Technisch_materiaal.Mobiele_TV",
       "Mobiele TV - Hybride vergadering" => "Rider_Technisch_materiaal.Mobiele_TV_Hybride_vergadering",
       "Mobiele speakers" => "Rider_Technisch_materiaal.Mobiele_speakers",
+      "Opmerking" => "Rider_Technisch_materiaal.Opmerkingen",
     ];
 
     return $this->extractNonEmptyfields($event, $fieldNameAndTitle);
@@ -136,7 +138,8 @@ class CRM_MuntpuntRider_Event {
       'Leeslamp',
       'Agora Tribune',
       'Op tafel / À table / Under the table',
-      'Agora Infohoek'
+      'Agora Infohoek',
+      '+5',
     ];
 
     $roomsAsString = implode(', ', $event['extra_evenement_info.muntpunt_zalen:label']);
